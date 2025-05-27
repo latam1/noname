@@ -65,10 +65,13 @@ flujo:
 6.  `Rodolfo` verifica que la orden generada por `Bob` sea correcta generando los pagos necesarios o compromisos a las partes involucradas, si todo está OK `Rodolfo` firma digitalmente el contrato y lo envía  a las partes.
 7.  `Bob` verifica la firma digital de `Rodolfo` e inicia con el cumplimiento de su compromiso "bien o servicio", al dar por culminado su participación, marca como finalizado y notifica a las partes
 
-en este punto el contrato puede derivar en dos ramas
+en este punto el contrato puede derivar en dos ramas:
+
 8.1. `Alice` firma el contrato digital y lo devuelve firmado a `Bob` para su firma y distribución en la red de bitcoin "vía Normal"
+
 o
-8.2 `Alice` no firma el contrato digital y después de 7 días `Rodolfo` debe dar una resolución con los contratos derivados de la "vía Disputa", sea con `Alice` para retornar los fondos o con `Bob` para dar cumplimiento con el contrato.
+
+8.2. `Alice` no firma el contrato digital y después de 7 días `Rodolfo` debe dar una resolución con los contratos derivados de la "vía Disputa", sea con `Alice` para retornar los fondos o con `Bob` para dar cumplimiento con el contrato.
 
 
 *Para este material educativo no se toman en cuenta todos los factores que modifican los incentivos de las partes a operar de manera saludable, así como las variables temporales y la cantidad de contratos secundarios derivados o de ejecución por via "Disputa".
