@@ -50,12 +50,8 @@ Es posible realizar el mismo contrato de manera expedita con bitcoin si se inclu
 
 ```mermaid
 graph TD
-A[Contrato de Bitcoin] --> B("via Normal:<br/>firma_digital_Alice<br/>firma_digital_Bob<br/>firma_digital_Rodolfo") 
+A[Contrato de Bitcoin] --> B("via Normal:<br/>+firma_digital_Alice<br/>+firma_digital_Bob") 
 A --> C[via Disputa:]   
-C --> D("$despues_de_7_dias
-$firma_digital_de_Rodolfo
-$firma_digital_de_Bob")
-C --> E("$despues_de_7_dias
-$firma_digital_de_Rodolfo
-$firma_digital_de_Alice")
+C --> D("despues_de_7_dias<br/>+firma_digital_Rodolfo<br/>+firma_digital_Bob")
+C --> E("despues_de_7_dias<br/>+firma_digital_Rodolfo<br/>+firma_digital_Alice")
 ```
