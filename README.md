@@ -56,6 +56,8 @@ C --> D("despues_de_7_dias<br/>+firma_digital_Rodolfo<br/>+firma_digital_Bob")
 C --> E("despues_de_7_dias<br/>+firma_digital_Rodolfo<br/>+firma_digital_Alice")
 ```
 
+[Ejemplo](https://mempool.space/testnet/address/tb1pyp9uxlkukvlrq5px5rqzl03ks88e9me3kvjzkqg5lkfe4vht0ktq8sj37p) del contrato:
+
 flujo:
 1. El ofertante `Bob` genera una oferta de bien o servicio mediante la interfaz de usuario y describe las condiciones especificas de la operacion siguiendo el protocolo definido en [NIP15](https://github.com/nostr-protocol/nips/blob/master/15.md) o un clon personalizado. 
 2. El comprador `Alice` propone un acuerdo de compra previamente discutido entre las dos partes, envía la información del acuerdo al mediador `Rodolfo`, para que el mismo genere el contrato digital.
@@ -67,11 +69,11 @@ flujo:
 
 en este punto el contrato puede derivar en dos ramas:
 
-8.1. `Alice` firma el contrato digital y lo devuelve firmado a `Bob` para su firma y distribución en la red de bitcoin "vía Normal"
+8.1. `Alice` firma el contrato digital y lo devuelve firmado a `Bob` para su firma y distribución en la red de bitcoin "vía Normal". [EJEMPLO](https://mempool.space/testnet/tx/4e4e558a0de1c5a462c1f370c6bd4b599e52139fe6df344aa86aa9792b954a5d) de una ejecucion de este tipo realizada por el equipo
 
 o
 
-8.2. `Alice` no firma el contrato digital y después de 7 días `Rodolfo` debe dar una resolución con los contratos derivados de la "vía Disputa", sea con `Alice` para retornar los fondos o con `Bob` para dar cumplimiento con el contrato.
+8.2. `Alice` no firma el contrato digital y después de 7 días `Rodolfo` debe dar una resolución con los contratos derivados de la "vía Disputa", sea con `Alice` para retornar los fondos o con `Bob` para dar cumplimiento con el contrato. [EJEMPLO](https://mempool.space/testnet/tx/fb1992fc1cc5bdcef81b003d32454440581cc4afba55cbbfa0981dc0d5ab17c2) de una ejecucion de este tipo realizada por el equipo
 
 
 *Para este material educativo no se toman en cuenta todos los factores que modifican los incentivos de las partes a operar de manera saludable, así como las variables temporales y la cantidad de contratos secundarios derivados o de ejecución por via "Disputa".
