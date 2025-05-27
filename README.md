@@ -48,5 +48,14 @@ Las condiciones generales establecidas para este contrato ["ESCROW"](https://www
 Es posible realizar el mismo contrato de manera expedita con bitcoin si se incluye algun mecanismo de clasificación "rating" para con todas las partes, siguiendo el mismo modelo de los mercados [OTC](https://www.bbva.com/es/que-son-los-mercados-over-the-counter-otc/)
 
 
-
-
+```mermaid
+graph TD
+A[Contrato de Bitcoin] --> B("via Normal:<br/>firma_digital_Alice<br/>firma_digital_Bob<br/>firma_digital_Rodolfo") 
+A --> C[via Disputa:]   
+C --> D("$despues_de_7_dias
+$firma_digital_de_Rodolfo
+$firma_digital_de_Bob")
+C --> E("$despues_de_7_dias
+$firma_digital_de_Rodolfo
+$firma_digital_de_Alice")
+```
