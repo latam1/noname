@@ -1,5 +1,5 @@
 # modo Legacy
-Alice quiere comprar un libro que Bob tiene en venta, Alice y Bob no se conocen, y viven en países diferentes, bajo jurisdicciones y regulaciones distintas:
+Alice quiere comprar un libro que Bob tiene en venta, Alice y Bob no se conocen, y viven en países diferentes, bajo jurisdicciones distintas:
 
 ```mermaid
 sequenceDiagram
