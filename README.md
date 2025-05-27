@@ -44,3 +44,9 @@ Las condiciones generales establecidas para este contrato ["ESCROW"](https://www
 
 - Después de 7 días te inciar el contrato con el deposito de Alice a Rodolfo y si Bob no ha logrado cumplir con su parte del contrato, Rodolfo puede ejecutar el contrato con cualquiera de las dos partes, o con Alice para devolver el dinero o con Bob para completar el contrato considerando cual de las partes incumplió con el contrato. ```despues de 7 dias: o Alice + Rodolfo o Bob + Rodolfo```
 
+
+Es posible realizar el mismo contrato de manera expedita con bitcoin si se incluye algun mecanismo de clasificación "rating" para con todas las partes, siguiendo el mismo modelo de los mercados [OTC](https://www.bbva.com/es/que-son-los-mercados-over-the-counter-otc/)
+
+
+
+
