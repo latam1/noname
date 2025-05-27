@@ -56,10 +56,25 @@ C --> D("despues_de_7_dias<br/>+firma_digital_Rodolfo<br/>+firma_digital_Bob")
 C --> E("despues_de_7_dias<br/>+firma_digital_Rodolfo<br/>+firma_digital_Alice")
 ```
 
-El work flow es el siguiente:
-1. El ofertante `Bob` publica mediante la interfaz de usuario un bien o servicio y describe las condiciones especificas de la operacion siguiendo el protocolo definido en [NIP15](https://github.com/nostr-protocol/nips/blob/master/15.md) o un clon
-2. El comprador `Alice` propone un acuerdo de compra previamente discutido entre las dos partes, envia la infromacion del acuerdo al mediador `Rodolfo`, para que el mismo genere el contrato digital.
-3.  `Rodolfo` genera el contrato digital con la informacion de `Alice` y `Bob`
-4.  `Alice` envia los fondos al contrato y marca su compromiso como ejecutado
-5.  `Bob` crea una orden para usar los fondos enviados al contrato y e inicia el cumplimiento de su compromiso "bien o servicio"
+flujo:
+1. El ofertante `Bob` genera una oferta de bien o servicio mediante la interfaz de usuario y describe las condiciones especificas de la operacion siguiendo el protocolo definido en [NIP15](https://github.com/nostr-protocol/nips/blob/master/15.md) o un clon personalizado. 
+2. El comprador `Alice` propone un acuerdo de compra previamente discutido entre las dos partes, envía la información del acuerdo al mediador `Rodolfo`, para que el mismo genere el contrato digital.
+3.  `Rodolfo` genera el contrato digital con la información de `Alice` y `Bob`
+4.  `Alice` envía los fondos al contrato y marca su compromiso como ejecutado
+5.  `Bob` crea una orden / solicitud  para usar los fondos enviados al contrato
+6.  `Rodolfo` verifica que la orden generada por `Bob` sea correcta generando los pagos necesarios o compromisos a las partes involucradas, si todo está OK `Rodolfo` firma digitalmente el contrato y lo envía  a las partes.
+7.  `Bob` verifica la firma digital de `Rodolfo` e inicia con el cumplimiento de su compromiso "bien o servicio", al dar por culminado su participación, marca como finalizado y notifica a las partes
 
+en este punto el contrato puede derivar en dos ramas
+8.1. `Alice` firma el contrato digital y lo devuelve firmado a `Bob` para su firma y distribución en la red de bitcoin "vía Normal"
+o
+8.2 `Alice` no firma el contrato digital y después de 7 días `Rodolfo` debe dar una resolución con los contratos derivados de la "vía Disputa", sea con `Alice` para retornar los fondos o con `Bob` para dar cumplimiento con el contrato.
+
+
+*Para este material educativo no se toman en cuenta todos los factores que modifican los incentivos de las partes a operar de manera saludable, así como las variables temporales y la cantidad de contratos secundarios derivados o de ejecución por via "Disputa".
+*`Rodolfo` no tienen que ser 1 sola entidad, pueden ser un esquema de firmas digitales diferentes a 1 firma, por ejemplo 2-de-3 firmas o 3-de-5 firmas o partes
+*el canal/medio de comunicación para intercambio de información no tiene por que ser centralizado
+
+
+-el desafío más evidente es la interfaz de usuario, no es un wallet no necesita almacenar llaves de bitcoin con fondos, pero sí debe poder realizar firmas digitales compatibles con [bip340-342-350](https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki), manejar nativamente las primitivas de bitcoin, generación de llaves, serialización de transacciones etc  . . ., [bip-3https://github.com/bitcoin/bips/blob/master/bip-0327.mediawiki27](), nostr [nip1-5](https://github.com/nostr-protocol/nips/blob/master/01.md) para comunicación, [nip15](https://github.com/nostr-protocol/nips/blob/master/15.md) publicación de ofertas. (Kotlin, Java ideal)  
+  
