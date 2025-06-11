@@ -1,5 +1,5 @@
 # Contribuyendo
-Gracias por considerar contribuir. Tus contribuciones ayudan a mejorar y expandir esta estudio para el desarrollo en torno a Bitcoin y economias en via de desarrollo.
+Gracias por considerar contribuir. Tus contribuciones ayudan a mejorar y expandir esta estudio para el desarrollo en torno a Bitcoin y economias en via de desarrollo. `https://web.libera.chat/#=)`
 
 ## Cómo contribuir
 ### 1. Informar sobre un problema, error conceptual etc.
