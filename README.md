@@ -1,4 +1,4 @@
-# modo Legacy
+# sistema de intercambio mediado tradicional
 Alice quiere comprar un libro que Bob tiene en venta, Alice y Bob no se conocen, y viven en países diferentes, bajo jurisdicciones distintas:
 
 ```mermaid
@@ -44,7 +44,7 @@ Las condiciones generales establecidas para este contrato ["ESCROW"](https://www
 
 - Después de 7 días te inciar el contrato con el deposito de Alice a Rodolfo y si Bob no ha logrado cumplir con su parte del contrato, Rodolfo puede ejecutar el contrato con cualquiera de las dos partes, o con Alice para devolver el dinero o con Bob para completar el contrato considerando cual de las partes incumplió con el contrato. ```despues de 7 dias: o Alice + Rodolfo o Bob + Rodolfo```
 
-# modo Bitcoin
+# sistema de intercambio mediado con esquemas de firmas digitales y contratos de bitcoin
 Es posible realizar el mismo contrato de manera expedita con bitcoin si se incluye algun mecanismo de clasificación "rating" para con todas las partes, siguiendo el mismo modelo de los mercados [OTC](https://www.bbva.com/es/que-son-los-mercados-over-the-counter-otc/)
 
 
@@ -80,6 +80,29 @@ o
 *`Rodolfo` no tienen que ser 1 sola entidad, pueden ser un esquema de firmas digitales diferentes a 1 firma, por ejemplo 2-de-3 firmas o 3-de-5 firmas o partes
 *el canal/medio de comunicación para intercambio de información no tiene por que ser centralizado
 
-
 -el desafío más evidente es la interfaz de usuario, no es un wallet no necesita almacenar llaves de bitcoin con fondos, pero sí debe poder realizar firmas digitales compatibles con [bip340-342-350](https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki), manejar nativamente las primitivas de bitcoin, generación de llaves, serialización de transacciones etc  . . ., [bip-327](https://github.com/bitcoin/bips/blob/master/bip-0327.mediawiki), nostr [nip1-5](https://github.com/nostr-protocol/nips/blob/master/01.md) para comunicación, [nip15](https://github.com/nostr-protocol/nips/blob/master/15.md) publicación de ofertas. (Kotlin, Java ideal)  
-  
+
+# aquiSeVendenLibros.com
+En pro de identificar un posible producto mínimo viable, realizar estudios de mercado, capitalizar talento local, talento remoto etc . . se propone la siguiente prueba de concepto "especifica" en donde se podrá abstraer la complejidad de un sistema de carácter general, descentralizado y resiliente.
+
+POC: una página web donde poder vender y comprar libros de manera expedita y segura, usando un esquema de firmas digitales, un contrato de bitcoin definido para este fin de la siguiente manera; un contrato digital que requiere 2 firmas digitales de 2 posibles firmas digitales (2-de-2) y que con el tiempo deriva en un contrato digital que requiere 2 firmas de 3 posibles firmas digitales (2-de-3)   
+
+- dado un conjunto de [vendedores](https://github.com/nostr-protocol/nips/blob/master/15.md#event-30017-create-or-update-a-stall) de libros: (V1, V2, . . . Vn) donde
+  v1 = libros de tecnología
+  v2 = novelas
+  * de no poseer ninguna operación previa los vendedores deben hacer un deposito de garantía por un tiempo establecido o limitar las operaciones a rangos específicos de valor máximo de operación 50$ que se incrementa en función de las operaciones realizadas. Antecedentes de lo anterior se pueden observar en [Bitcoin-OTCs](https://www.bitcoin.com/otc/), localbitcoins, [hodlhodl](https://hodlhodl.com/) y cualquier otra plataforma de intercambios p2p donde compradores y vendedores son considerados no confiables. #TODO definir el sistema de rating aquí!
+  * del precio final de venta de cada libro; el 0.5% es enviado al mediador al finalizar cualquier operacion
+ 
+- un conjunto de [compradores](https://github.com/nostr-protocol/nips/blob/master/05.md#mapping-nostr-keys-to-dns-based-internet-identifiers): (C1, C2, ... Cn)
+  C1 = casual
+  C2 = recurrente
+  * el comprador debe colocar en garantia el monto completo + 0.5% en el contrato 
+  * el 0.5% es enviado al mediador al dar por finalizada cualquier operacion 
+
+- un mediador : M1
+  * debe grarantizar la operatividad del sistema por el 1% del valor total de las operaciones finalizadas
+ 
+- los fondos en garantia "el dinero del comprador en bitcoin o algun asset estable*=)" no necesariamente deben ser el activo transado por una de las partes, el comprador puede completar su parte del acuerdo con haciendo una transferencia bancaria local y el vendedor al confirmar el pago por otra via, puede liberar los fondos del comprador nuevamente al origen -1%, ejemplo una compania de logistica que resulta tambien aporta liquidez en bitcoin a una de las partes para realizar un operacion para con la plataforma a la hora de comprar un libro extremadamente raro.
+
+- para la prueba de concepto el monto valor en garantia sera "el pago", si bien esto no es eficiente usando bitcoin directamente, se deben incluir cadenas secundarias como Liquid y sus "Colored Coins",
+
