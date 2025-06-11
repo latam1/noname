@@ -100,9 +100,12 @@ POC: una página web donde poder vender y comprar libros de manera expedita y se
   * el 0.5% es enviado al mediador al dar por finalizada cualquier operacion 
 
 - un mediador : M1
-  * debe grarantizar la operatividad del sistema por el 1% del valor total de las operaciones finalizadas
- 
-- los fondos en garantia "el dinero del comprador en bitcoin o algun asset estable*=)" no necesariamente deben ser el activo transado por una de las partes, el comprador puede completar su parte del acuerdo con haciendo una transferencia bancaria local y el vendedor al confirmar el pago por otra via, puede liberar los fondos del comprador nuevamente al origen -1%, ejemplo una compania de logistica que resulta tambien aporta liquidez en bitcoin a una de las partes para realizar un operacion para con la plataforma a la hora de comprar un libro extremadamente raro.
+  * debe garantizar la operatividad del sistema por el 1% del valor total de las operaciones ejecutadas.
 
-- para la prueba de concepto el monto valor en garantia sera "el pago", si bien esto no es eficiente usando bitcoin directamente, se deben incluir cadenas secundarias como Liquid y sus "Colored Coins",
+- para la prueba de concepto el monto valor en garantía sera "el pago", si bien esto no es eficiente usando bitcoin directamente, se deben incluir cadenas secundarias como Liquid y sus "Colored Coins"
+
+En un sistema ideal y de carácter general los fondos en garantía "el dinero del comprador en bitcoin" no necesariamente deben ser el pago, el comprador puede completar su parte del acuerdo haciendo una operación fuera del sistema, ejm una operacion Swift "algo fácil de verificar" y el vendedor al confirmar el pago por otra vía, puede liberar los fondos del comprador nuevamente al origen -1%, ejemplo; una compañía de logística que resulta también aporta liquidez en bitcoin a una de las partes para realizar una operación con la plataforma a la hora de comprar un libro extremadamente raro y de alto valor.
+
+- la prueba de concepto asume únicamente un impuesto sobre las operaciones ejecutadas del 1% como modelo único.
+
 
